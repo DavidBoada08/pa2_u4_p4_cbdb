@@ -1,34 +1,38 @@
-package com.example.demo.repository.modelo;
+package com.example.demo.modelo;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "propietario_web")
+@Table(name="propietario_web")
 public class Propietario {
 	
 	@Id
-	@SequenceGenerator(name = "seq_propietario", sequenceName = "seq_propietario", allocationSize = 1)
-	@GeneratedValue(generator = "seq_propietario", strategy = GenerationType.SEQUENCE)
-	@Column(name = "pro_id")
+	@SequenceGenerator(name = "seq_pro",sequenceName = "seq_pro",allocationSize = 1)
+	@GeneratedValue(generator = "seq_pro",strategy = GenerationType.SEQUENCE)
+	@Column(name = "prop_id")
 	private Integer id;
 	
-	@Column(name = "pro_nombre")
+	@Column(name = "prop_nombre")
 	private String nombre;
 	
-	@Column(name = "pro_apellido")
+	@Column(name = "prop_apellido")
 	private String apellido;
-
-	@Column(name = "pro_cedula")
+	
+	@Column(name = "prop_cedula")
 	private String cedula;
 	
 	
-
 	public Integer getId() {
 		return id;
 	}
@@ -62,12 +66,11 @@ public class Propietario {
 	}
 
 
-
 	@Override
 	public String toString() {
-		return "Propietario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula
-				+ "]";
+		return "Propietario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", cedula=" + cedula + "]";
 	}
+	
 	
 	
 	

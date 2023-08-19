@@ -43,7 +43,7 @@ public class PropietarioController {
 		
 		this.iPropietarioService.modificar(propietario);
 		
-		return "redirect:/propietarios/reporte";
+		return "";
 	}
 	
 
